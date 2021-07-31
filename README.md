@@ -74,4 +74,6 @@ describe("registerUSer", () => {
 
 ### Continuous Running Test
 
-add `Jest --watchAll` in `package.json`
+To have`Jest`run all the time, add `Jest --watchAll` in `package.json`
+
+test

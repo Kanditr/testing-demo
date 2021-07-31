@@ -1,5 +1,6 @@
 const lib = require("../lib");
 
+// Note
 describe("absolute", () => {
   it("should return a positive number if input is positive", () => {
     const result = lib.absolute(1);

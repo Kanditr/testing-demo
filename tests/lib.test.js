@@ -1,6 +1,6 @@
 const lib = require("../lib");
 
-// Note
+// Test Number
 describe("absolute", () => {
   it("should return a positive number if input is positive", () => {
     const result = lib.absolute(1);
@@ -18,6 +18,7 @@ describe("absolute", () => {
   });
 });
 
+// Test String
 describe("greet", () => {
   it("should return the greeting message", () => {
     const result = lib.greet("Gun");
@@ -25,3 +26,14 @@ describe("greet", () => {
     expect(result).toContain("Gun");
   });
 });
+
+// Test Array
+describe("getCurrencies", () => {
+  it("should return supported currencies", () => {
+    const result = lib.getCurrencies();
+    expect(result).toEqual(expect.arrayContaining(["EUR", "USD", "AUD"]));
+  });
+});
+
+// Test Objects
+describe("getProduct", () => {});

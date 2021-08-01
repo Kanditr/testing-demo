@@ -6,7 +6,7 @@ Automate testing with `Jest` library
 
 ### Unit test
 
-```JavaScript
+```JS
 describe("absolute", () => {
   it("should return a positive number if input is positive", () => {
     const result = lib.absolute(1);
@@ -34,7 +34,7 @@ describe("absolute", () => {
 - `toMatchObject`: to check that result cover all the properties in test object
 - `toHaveProperty`: contain the property
 
-```JavaScript
+```JS
 // function
 getProduct = function (productId) {
   return { id: productId, price: 10, category: "a" };
@@ -58,7 +58,7 @@ describe("getProduct", () => {
 
 ### Test Exceptions
 
-```JavaScript
+```JS
 describe("registerUSer", () => {
   it("should throw if username is falsy", () => {
 
@@ -78,4 +78,39 @@ To have`Jest`run all the time, add `Jest --watchAll` in `package.json`
 
 ### Mock Functions
 
-use when there are dependencies from outside
+To test the dependencies from outside without connect to it using mock data
+
+Replace the real implementation with newly created function and return the expected result of real function
+
+```JS
+   db.getCustomerSync = function (customerId) {
+      console.log("Fake reading customer...");
+      return { id: customerId, points: 20 };
+    };
+```
+
+### Interaction Testing
+
+To test the interaction of one object with another object by apply change to one when another one is completed
+
+```JS
+describe("notifyCustomer", () => {
+  it("should send an email to the customer", () => {
+    db.getCustomerSync = function (customerId) {
+      return { email: "a" };
+    };
+
+    let mailSent = false;
+    mail.send = function (email, message) {
+      mailSent = true;
+    };
+
+    lib.notifyCustomer({ customerId: 1 });
+
+    // expect mailSent to be true when notifyCustomer is completed execution
+    expect(mailSent).toBe(true);
+  });
+});
+```
+
+<!-- note to myself: when we import the same node module in different file, it will import single instance in the memory -->

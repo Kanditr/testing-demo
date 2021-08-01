@@ -78,9 +78,7 @@ To have`Jest`run all the time, add `Jest --watchAll` in `package.json`
 
 ### Mock Functions
 
-To test the dependencies from outside without connect to it using mock data
-
-Replace the real implementation with newly created function and return the expected result of real function
+To test the dependencies from outside without connect to it using mock data, replace the real implementation with newly created function and return the expected result of real function
 
 ```JS
    db.getCustomerSync = function (customerId) {

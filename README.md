@@ -27,12 +27,34 @@ describe("absolute", () => {
 
 ### Test matcher
 
-- `toBe`: expect identical and in the same location
-- `toMatch`: contain result in the location defined with regular expresssion e.g., `/containThis/`
-- `toContain`: contain result anywhere in return
-- `toEqual`: ensure the opject has the same properties and don't care the location in memory
-- `toMatchObject`: to check that result cover all the properties in test object
-- `toHaveProperty`: contain the property
+```JS
+// Equality
+expect(...).toBe();
+expect(...).toEqual();
+// Truthiness
+expect(...).toBeDefined();
+expect(...).toBeNull();
+expect(...).toBeTruthy();
+expect(...).toBeFalsy();
+// Numbers
+expect(...).toBeGreaterThan();
+expect(...).toBeGreaterThanOrEqual();
+expect(...).toBeLessThan();
+expect(...).toBeLessThanOrEqual();
+// Strings
+expect(...).toMatch(/regularExp/);
+// Arrays
+expect(...).toContain();
+// Objects
+expect(...).toBe();
+// check for the equality of object references
+expect(...).toEqual();
+// check for the equality of properties
+expect(...).toMatchObject();
+expect(...).toHaveProperty()
+// Exceptions
+expect(() => { someCode }).toThrow();
+```
 
 ```JS
 // function

@@ -46,7 +46,7 @@ describe("getProduct", () => {
 });
 
 // Test Exceptions
-describe("registerUSer", () => {
+describe("registerUser", () => {
   it("should throw if username is falsy", () => {
     const args = [null, undefined, NaN, "", 0, false];
     args.forEach((a) => {

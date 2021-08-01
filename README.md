@@ -76,4 +76,6 @@ describe("registerUSer", () => {
 
 To have`Jest`run all the time, add `Jest --watchAll` in `package.json`
 
-test
+### Mock Functions
+
+use when there are dependencies from outside

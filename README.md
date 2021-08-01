@@ -56,6 +56,8 @@ expect(...).toHaveProperty()
 expect(() => { someCode }).toThrow();
 ```
 
+Example
+
 ```JS
 // function
 getProduct = function (productId) {
